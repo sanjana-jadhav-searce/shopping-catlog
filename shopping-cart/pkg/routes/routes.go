@@ -1,0 +1,22 @@
+package routes
+
+import (
+	"github.com/gorilla/mux"
+	"github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers"
+)
+
+var RegisterShoppingCart = func(router *mux.Router) {
+	router.HandleFunc("/create", controllers.CreateProduct).Methods("POST")
+	router.HandleFunc("/products", controllers.GetProducts).Methods("GET")
+	router.HandleFunc("/product/{name}", controllers.GetProductByName).Methods("GET")
+	router.HandleFunc("/updateproduct", controllers.UpdateProduct).Methods("PUT")
+	router.HandleFunc("/deleteproduct", controllers.DeleteProduct).Methods("DELETE")
+	router.HandleFunc("/createcart", controllers.AddItemToCart).Methods("POST")
+	// router.HandleFunc("/createcarts", controllers.AddItemsToCart).Methods("POST")
+	router.HandleFunc("/createinventory", controllers.CreateInventoryProduct).Methods("POST")
+	router.HandleFunc("/productinventory/{name}", controllers.GetProductByNameInInventory).Methods("GET")
+	router.HandleFunc("/productsinventory", controllers.GetProductsInventory).Methods("GET")
+	router.HandleFunc("/updateproductinventory", controllers.UpdateProductInventory).Methods("PUT")
+	router.HandleFunc("/deleteproductinventory", controllers.DeleteProductInventory).Methods("DELETE")
+
+}
