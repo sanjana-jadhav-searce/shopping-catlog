@@ -17,9 +17,6 @@ import (
 
 var db *sql.DB
 
-func SendResponse(v any, w http.ResponseWriter) {
-	json.NewEncoder(w).Encode(v)
-}
 
 func CreateProduct(w http.ResponseWriter, r *http.Request) {
 	db := config.Connect()
