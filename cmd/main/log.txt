@@ -18,3 +18,68 @@ created by net/http.(*Server).Serve
 	/usr/local/go/src/net/http/server.go:3102 +0x4db
 2022/12/27 20:12:39 Error 1062 (23000): Duplicate entry 'Dettol' for key 'carts.PRIMARY'
 2022/12/27 20:12:43 Error 1062 (23000): Duplicate entry 'Dettol' for key 'carts.PRIMARY'
+2022/12/28 15:44:32 Error 1062 (23000): Duplicate entry 'Jordan' for key 'products.PRIMARY'
+2022/12/28 16:10:57 Error 1062 (23000): Duplicate entry 'Dettol' for key 'carts.PRIMARY'
+2022/12/28 16:11:07 Error 1062 (23000): Duplicate entry 'Dettol' for key 'carts.PRIMARY'
+2022/12/28 16:11:28 Error 1062 (23000): Duplicate entry 'Dettol' for key 'carts.PRIMARY'
+2022/12/28 16:12:05 Error 1062 (23000): Duplicate entry 'Santoor' for key 'carts.PRIMARY'
+2022/12/28 16:23:30 http: panic serving [::1]:63053: runtime error: invalid memory address or nil pointer dereference
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x13881e0, 0x1689130})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2985 +0x27
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.DeleteProduct({0x1478f80, 0xc0001441c0}, 0xc000114630?)
+	/Users/sanjanajadhav/Desktop/Shopping-Catlog-Api/shopping-catlog/pkg/controllers/controllers.go:140 +0x2e5
+net/http.HandlerFunc.ServeHTTP(0xc000120600?, {0x1478f80?, 0xc0001441c0?}, 0xc0001999e0?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001de3c0, {0x1478f80, 0xc0001441c0}, 0xc000120500)
+	/Users/sanjanajadhav/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1478228?}, {0x1478f80, 0xc0001441c0}, 0xc000120500)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002a5180, {0x14793e0, 0xc000265980})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/28 16:23:55 http: panic serving [::1]:63062: runtime error: invalid memory address or nil pointer dereference
+goroutine 50 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x13881e0, 0x1689130})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2985 +0x27
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.DeleteProduct({0x1478f80, 0xc0003180e0}, 0xc000304210?)
+	/Users/sanjanajadhav/Desktop/Shopping-Catlog-Api/shopping-catlog/pkg/controllers/controllers.go:140 +0x2e5
+net/http.HandlerFunc.ServeHTTP(0xc000312100?, {0x1478f80?, 0xc0003180e0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001de3c0, {0x1478f80, 0xc0003180e0}, 0xc000312000)
+	/Users/sanjanajadhav/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1478228?}, {0x1478f80, 0xc0003180e0}, 0xc000312000)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000308000, {0x14793e0, 0xc000265980})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/28 16:24:29 http: panic serving [::1]:63067: runtime error: invalid memory address or nil pointer dereference
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x13881e0, 0x1689130})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2985 +0x27
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.DeleteProduct({0x1478f80, 0xc0001260e0}, 0xc000114180?)
+	/Users/sanjanajadhav/Desktop/Shopping-Catlog-Api/shopping-catlog/pkg/controllers/controllers.go:140 +0x2e5
+net/http.HandlerFunc.ServeHTTP(0xc000120100?, {0x1478f80?, 0xc0001260e0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001de3c0, {0x1478f80, 0xc0001260e0}, 0xc0000b4100)
+	/Users/sanjanajadhav/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x1478228?}, {0x1478f80, 0xc0001260e0}, 0xc0000b4100)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002a5180, {0x14793e0, 0xc000265980})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
