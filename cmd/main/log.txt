@@ -83,3 +83,21 @@ net/http.(*conn).serve(0xc0002a5180, {0x14793e0, 0xc000265980})
 	/usr/local/go/src/net/http/server.go:1991 +0x607
 created by net/http.(*Server).Serve
 	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/28 16:31:03 Error 1062 (23000): Duplicate entry 'Jordan' for key 'products.PRIMARY'
+2022/12/28 16:53:18 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 16:53:46 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 16:55:33 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:00:09 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:01:15 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:01:31 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:02:44 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:03:33 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:04:17 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:04:45 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:11:21 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:11:22 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:11:23 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:11:23 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:11:25 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:26:33 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 17:27:02 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
