@@ -24,6 +24,7 @@ var RegisterShoppingCart = func(router *mux.Router) {
 	router.HandleFunc("/deletecategory", controllers.DeleteCategory).Methods("DELETE")
 
 	router.HandleFunc("/createcart", controllers.CreateCart).Methods("POST")
+	router.HandleFunc("/additemstocart", controllers.AddItemsToCart).Methods("POST")
 	router.HandleFunc("/additemtocart", controllers.AddItemToCart).Methods("POST")
 	router.HandleFunc("/getcart", controllers.GetCart).Methods("GET")
 	router.HandleFunc("/deletecart", controllers.DeleteCart).Methods("DELETE")

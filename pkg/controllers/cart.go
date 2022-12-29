@@ -235,49 +235,26 @@ func DeleteCart(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// func AddItemsToCart(w http.ResponseWriter, r *http.Request) {
-// 	response := []map[string]any{}
-// 	request_body := []map[string]int{}
+func AddItemsToCart(w http.ResponseWriter, r *http.Request) {
+	response := []map[string]any{}
+	request_body := []map[string]int{}
 
-// 	err := json.NewDecoder(r.Body).Decode(&request_body)
-// 	if err != nil {
-// 		return
-// 	}
+	err := json.NewDecoder(r.Body).Decode(&request_body)
+	if err != nil {
+		return
+	}
 
-// 	for _, v := range request_body {
-// 		new_response_item := map[string]any{}
-// 		product := v["product"]
-// 		quantity := v["quantity"]
-// 		new_response_item["product"] = product
-// 		new_response_item["quantity"] = quantity
+	for _, v := range request_body {
+		new_response_item := map[string]any{}
+		product := v["product"]
+		quantity := v["quantity"]
+		new_response_item["product"] = product
+		new_response_item["quantity"] = quantity
 
-// 		new_response_item["message"] = MultipleCart(fmt.Sprint(quantity), fmt.Sprint(product))["message"]
-// 		response = append(response, new_response_item)
-// 	}
+		new_response_item["message"] = MultipleCart(fmt.Sprint(quantity), fmt.Sprint(product))["message"]
+		response = append(response, new_response_item)
+	}
 
-// 	w.Header().Add("Content-Type", "application/json")
-// 	json.NewEncoder(w).Encode(response)
-// }
-
-// func AddItemsToCart(w http.ResponseWriter, r *http.Request) {
-// 	response := []map[string]any{}
-// 	request_body := []map[string]int{}
-
-// 	err := json.NewDecoder(r.Body).Decode(&request_body)
-// 	if err != nil {
-// 		return
-// 	}
-
-// 	for _, v := range request_body {
-// 		new_response_item := map[string]any{}
-// 		product := v["product"]
-// 		quantity := v["quantity"]
-// 		new_response_item["product"] = product
-// 		new_response_item["quantity"] = quantity
-
-// 		new_response_item["message"] = AddItemToCart(fmt.Sprint(quantity), fmt.Sprint(product))["message"]
-// 		response = append(response, new_response_item)
-// 	}
-
-// 	helpers.SendResponse(response, w)
-// }
+	w.Header().Add("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(response)
+}
