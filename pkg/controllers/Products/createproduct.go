@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"database/sql"
 	"encoding/json"
 	"log"
 
@@ -14,6 +15,8 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/sanjana-jadhav-searce/shopping-catlog/pkg/config"
 )
+
+var db *sql.DB
 
 func CreateProduct(w http.ResponseWriter, r *http.Request) {
 	db := config.Connect()
@@ -39,5 +42,20 @@ func CreateProduct(w http.ResponseWriter, r *http.Request) {
 	}
 	x := "Created data successfully into the Products Table"
 	json.NewEncoder(w).Encode(map[string]string{"message": x})
+
+	// requestBody, _ := ioutil.ReadAll(r.Body)
+	// var person models.Product
+	// json.Unmarshal(requestBody, &person)
+	// fmt.Println(person)
+	// result, err := db.Query("Insert into products(name, specification, sku, category, price) values(?,?,?,?,?) Where id=?", person.Name, person.Specification, person.SKU, person.Category, person.Price, person.ID)
+	// if err != nil {
+	// 	log.Print(err)
+	// }
+	// for result.Next() {
+	// 	result.Scan(person.Name, person.Specification, person.SKU, person.Category, person.Price, person.ID)
+	// }
+	// w.Header().Set("Content-Type", "application/json")
+	// w.WriteHeader(http.StatusCreated)
+	// json.NewEncoder(w).Encode(person)
 
 }
