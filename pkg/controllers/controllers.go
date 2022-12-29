@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"database/sql"
 	"encoding/json"
 	"fmt"
 
@@ -11,6 +10,7 @@ import (
 	// "example.com/pkg/utils"
 	"log"
 	"net/http"
+
 	// "strconv"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -18,7 +18,7 @@ import (
 	"github.com/sanjana-jadhav-searce/shopping-catlog/pkg/models"
 )
 
-var db *sql.DB
+// var db *sql.DB
 
 func CreateProduct(w http.ResponseWriter, r *http.Request) {
 	db := config.Connect()
@@ -129,9 +129,8 @@ func UpdateProduct(w http.ResponseWriter, r *http.Request) {
 func DeleteProduct(w http.ResponseWriter, r *http.Request) {
 	db := config.Connect()
 	defer db.Close()
-
+	var demo models.Product
 	product := r.FormValue("product")
-	rows, err := db.Query("SELECT * FROM products WHERE name=?", product)
 	if product == "" {
 
 		y := "Data Not Found"
@@ -140,7 +139,12 @@ func DeleteProduct(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(y)
 		return
 	}
-	if rows.Next() == false {
+	rows, err := db.Query("SELECT id, name, specification, SKU, category, price FROM products WHERE name=?", product)
+	if err != nil {
+		log.Print(err)
+	}
+	if !rows.Next() {
+		rows.Scan(&demo.Name)
 		z := "Invalid Inventory Product Reference"
 		json.Marshal(z)
 		w.Header().Set("Content-Type", "application/json")

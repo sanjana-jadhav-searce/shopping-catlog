@@ -2,6 +2,7 @@ package controllers
 
 import (
 	// "database/sql"
+
 	"encoding/json"
 	"fmt"
 
@@ -12,6 +13,7 @@ import (
 	// "example.com/pkg/utils"
 	"log"
 	"net/http"
+
 	// "strconv"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -95,9 +97,12 @@ func GetCategories(w http.ResponseWriter, r *http.Request) {
 func DeleteCategory(w http.ResponseWriter, r *http.Request) {
 	db := config.Connect()
 	defer db.Close()
-
+	var category models.CategoryMaster
 	product := r.FormValue("product")
 	rows, err := db.Query("SELECT name FROM categorymaster")
+	if err != nil {
+		log.Print(err)
+	}
 	if product == "" {
 
 		y := "Data Not Found"
@@ -106,7 +111,8 @@ func DeleteCategory(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(y)
 		return
 	}
-	if rows.Next() == false {
+	if !rows.Next() {
+		rows.Scan(&category.Name)
 		z := "Invalid Category Reference"
 		json.Marshal(z)
 		w.Header().Set("Content-Type", "application/json")
