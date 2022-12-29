@@ -114,7 +114,7 @@ func DeleteCategory(w http.ResponseWriter, r *http.Request) {
 		return
 
 	}
-	result, err := db.Exec("DELETE FROM categorymaster WHERE product=?", product)
+	result, err := db.Exec("DELETE FROM categorymaster WHERE name=?", product)
 	if err != nil {
 		log.Print(err)
 		return

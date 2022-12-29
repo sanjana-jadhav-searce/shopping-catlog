@@ -1,25 +1,44 @@
-package main
+package tests
 
 import (
-	// "bytes"
+	"encoding/json"
+	"fmt"
 	"net/http"
-	"net/http/httptest"
 	"testing"
+
+	"github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers"
 )
 
-func GetProducts(t *testing.T) map[string]string {
-	response, err := http.GET(URL + "/products")
+func GetCategory(t *testing.T) any {
+	response, err := http.Get(URL + "/categories")
 	if err != nil {
-		return err
+		t.Log(err)
 	}
 
-	response_json := map[string]string{}
-	json.NewDecoder(response.Body).Decode(&response_json)
+	var v any
+
+	err = json.NewDecoder(response.Body).Decode(&v)
+	if err != nil {
+		t.Log(err)
+	}
+
+	return v
 }
 
-func TestGetProducts(t *testing.T) {
-	response, err := GetProducts(t)
-	if err != nil {
-		t.Errorf("Expected Response : %v , Got Response : %v", "A valid product key", response)
+func TestGetCategories(t *testing.T) {
+	categories := GetCategory(t)
+
+	_, ok := categories.([]any)
+
+	if !ok {
+		t.Errorf("Expected a slice of categories but got: " + fmt.Sprint(categories))
+	}
+
+	categories = GetCategory(t)
+
+	_, ok = categories.(map[string]any)["message"]
+
+	if !ok {
+		t.Errorf("Expected an error of categories but got: " + fmt.Sprint(categories))
 	}
 }

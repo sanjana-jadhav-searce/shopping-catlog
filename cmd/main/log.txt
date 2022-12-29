@@ -101,3 +101,7 @@ created by net/http.(*Server).Serve
 2022/12/28 17:11:25 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
 2022/12/28 17:26:33 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
 2022/12/28 17:27:02 Error 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`shoppingcart`.`inventories`, CONSTRAINT `inventories_ibfk_1` FOREIGN KEY (`productname`) REFERENCES `products` (`name`))
+2022/12/28 19:48:33 Error 1054 (42S22): Unknown column 'product' in 'where clause'
+2022/12/28 19:48:45 Error 1054 (42S22): Unknown column 'product' in 'where clause'
+2022/12/28 19:48:48 Error 1054 (42S22): Unknown column 'product' in 'where clause'
+2022/12/29 11:00:25 Error 1062 (23000): Duplicate entry 'Titan' for key 'carts.PRIMARY'
