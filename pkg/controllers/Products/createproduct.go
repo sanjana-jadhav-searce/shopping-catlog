@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"database/sql"
 	"encoding/json"
 	"log"
 
@@ -15,8 +14,6 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/sanjana-jadhav-searce/shopping-catlog/pkg/config"
 )
-
-var db *sql.DB
 
 func CreateProduct(w http.ResponseWriter, r *http.Request) {
 	db := config.Connect()
