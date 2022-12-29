@@ -43,11 +43,11 @@ func CreateProduct(w http.ResponseWriter, r *http.Request) {
 	x := "Created data successfully into the Products Table"
 	json.NewEncoder(w).Encode(map[string]string{"message": x})
 
-	// requestBody, _ := ioutil.ReadAll(r.Body)
+	// requestBody, _ := io.ReadAll(r.Body)
 	// var person models.Product
 	// json.Unmarshal(requestBody, &person)
 	// fmt.Println(person)
-	// result, err := db.Query("Insert into products(name, specification, sku, category, price) values(?,?,?,?,?) Where id=?", person.Name, person.Specification, person.SKU, person.Category, person.Price, person.ID)
+	// result, err := db.Query("Insert into products(id, name, specification, sku, category, price) values(?,?,?,?,?)", person.ID, person.Name, person.Specification, person.SKU, person.Category, person.Price)
 	// if err != nil {
 	// 	log.Print(err)
 	// }
