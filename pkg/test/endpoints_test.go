@@ -5,8 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"testing"
-
-	"github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers"
+	// "github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers"
 )
 
 func GetCategory(t *testing.T) any {
@@ -25,6 +24,8 @@ func GetCategory(t *testing.T) any {
 	return v
 }
 
+var URL string = "http://127.0.0.1:8000"
+
 func TestGetCategories(t *testing.T) {
 	categories := GetCategory(t)
 
@@ -36,7 +37,7 @@ func TestGetCategories(t *testing.T) {
 
 	categories = GetCategory(t)
 
-	_, ok = categories.(map[string]any)["message"]
+	_, ok = categories.([]any)
 
 	if !ok {
 		t.Errorf("Expected an error of categories but got: " + fmt.Sprint(categories))

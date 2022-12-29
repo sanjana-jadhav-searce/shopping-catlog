@@ -79,6 +79,9 @@ func AddItemToCart(w http.ResponseWriter, r *http.Request) {
 				for rows.Next() {
 					err4 = rows.Scan(&addition.Product, &addition.Quantity, &addition.Price)
 					totalcartvalue += (addition.Quantity * addition.Price)
+					if err4 != nil {
+						log.Print(err4)
+					}
 				}
 				json.Marshal(totalcartvalue)
 				message2 := "Total Cart Value ---> "
@@ -226,3 +229,50 @@ func DeleteCart(w http.ResponseWriter, r *http.Request) {
 
 	}
 }
+
+func AddItemsToCart(w http.ResponseWriter, r *http.Request) {
+	response := []map[string]any{}
+	request_body := []map[string]int{}
+
+	err := json.NewDecoder(r.Body).Decode(&request_body)
+	if err != nil {
+		return
+	}
+
+	for _, v := range request_body {
+		new_response_item := map[string]any{}
+		product := v["product"]
+		quantity := v["quantity"]
+		new_response_item["product"] = product
+		new_response_item["quantity"] = quantity
+
+		new_response_item["message"] = MultipleCart(fmt.Sprint(quantity), fmt.Sprint(product))["message"]
+		response = append(response, new_response_item)
+	}
+
+	w.Header().Add("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(response)
+}
+
+// func AddItemsToCart(w http.ResponseWriter, r *http.Request) {
+// 	response := []map[string]any{}
+// 	request_body := []map[string]int{}
+
+// 	err := json.NewDecoder(r.Body).Decode(&request_body)
+// 	if err != nil {
+// 		return
+// 	}
+
+// 	for _, v := range request_body {
+// 		new_response_item := map[string]any{}
+// 		product := v["product"]
+// 		quantity := v["quantity"]
+// 		new_response_item["product"] = product
+// 		new_response_item["quantity"] = quantity
+
+// 		new_response_item["message"] = AddItemToCart(fmt.Sprint(quantity), fmt.Sprint(product))["message"]
+// 		response = append(response, new_response_item)
+// 	}
+
+// 	helpers.SendResponse(response, w)
+// }

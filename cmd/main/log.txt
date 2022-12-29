@@ -105,3 +105,9 @@ created by net/http.(*Server).Serve
 2022/12/28 19:48:45 Error 1054 (42S22): Unknown column 'product' in 'where clause'
 2022/12/28 19:48:48 Error 1054 (42S22): Unknown column 'product' in 'where clause'
 2022/12/29 11:00:25 Error 1062 (23000): Duplicate entry 'Titan' for key 'carts.PRIMARY'
+2022/12/29 14:33:32 listen tcp :8000: bind: address already in use
+2022/12/29 14:35:06 listen tcp :8000: bind: address already in use
+2022/12/29 14:38:13 listen tcp :5000: bind: address already in use
+2022/12/29 14:48:45 json: cannot unmarshal string into Go value of type int
+2022/12/29 14:51:52 json: cannot unmarshal string into Go value of type int
+2022/12/29 14:53:45 json: cannot unmarshal string into Go value of type int
