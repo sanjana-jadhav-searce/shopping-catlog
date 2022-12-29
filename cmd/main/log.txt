@@ -111,3 +111,4 @@ created by net/http.(*Server).Serve
 2022/12/29 14:48:45 json: cannot unmarshal string into Go value of type int
 2022/12/29 14:51:52 json: cannot unmarshal string into Go value of type int
 2022/12/29 14:53:45 json: cannot unmarshal string into Go value of type int
+2022/12/29 16:19:26 Error 1062 (23000): Duplicate entry 'Dettol' for key 'carts.PRIMARY'
