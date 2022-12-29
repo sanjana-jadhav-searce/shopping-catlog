@@ -37,6 +37,12 @@ func AddItemToCart(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
+	if !rows.Next() {
+		insertion := "Product Not available in the Inventory!"
+		json.Marshal(insertion)
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(insertion)
+	}
 	for rows.Next() {
 		err = rows.Scan(&products.Product, &products.Quantity)
 		cartquantity, err1 := strconv.ParseInt(quantity, 0, 0)
