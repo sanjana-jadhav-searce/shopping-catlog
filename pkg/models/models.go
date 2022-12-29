@@ -2,6 +2,7 @@ package models
 
 import (
 	"database/sql"
+
 	"github.com/jinzhu/gorm"
 	"github.com/sanjana-jadhav-searce/shopping-catlog/pkg/config"
 )
@@ -22,7 +23,8 @@ type MinimumProduct struct {
 	// Specification string `json:"specification"`
 	// SKU           string `json:"SKU"`
 	// Category      string `json:"category"`
-	Price int64 `json:"price"`
+	Category string `json:"category"`
+	Price    int64  `json:"price"`
 }
 
 type CategoryMaster struct {
@@ -31,12 +33,12 @@ type CategoryMaster struct {
 
 type Inventory struct {
 	Product  string `json:"productname"`
-	Quantity int64  `json:"quantity"`
+	Quantity int    `json:"quantity"`
 }
 
 type Cart struct {
 	Product  string `json:"product"`
-	Quantity int64  `json:"quantity"`
+	Quantity int    `json:"quantity"`
 }
 
 type Item struct {

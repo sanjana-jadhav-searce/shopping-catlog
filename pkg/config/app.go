@@ -2,6 +2,7 @@ package config
 
 import (
 	"database/sql"
+	"fmt"
 
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
@@ -15,6 +16,7 @@ func Connect() *sql.DB {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println("Connected to database successfully!")
 	db = d
 	return db
 }

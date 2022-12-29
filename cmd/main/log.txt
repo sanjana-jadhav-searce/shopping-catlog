@@ -112,3 +112,314 @@ created by net/http.(*Server).Serve
 2022/12/29 14:51:52 json: cannot unmarshal string into Go value of type int
 2022/12/29 14:53:45 json: cannot unmarshal string into Go value of type int
 2022/12/29 16:19:26 Error 1062 (23000): Duplicate entry 'Dettol' for key 'carts.PRIMARY'
+2022/12/29 17:17:17 Error 1062 (23000): Duplicate entry 'Santoor' for key 'products.PRIMARY'
+2022/12/29 17:17:59 Error 1062 (23000): Duplicate entry 'santoor' for key 'products.PRIMARY'
+2022/12/29 17:23:00 Error 1062 (23000): Duplicate entry 'santoor' for key 'products.PRIMARY'
+2022/12/29 17:23:08 Error 1062 (23000): Duplicate entry 'santoor' for key 'products.PRIMARY'
+2022/12/29 17:23:25 Error 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`shoppingcart`.`products`, CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category`) REFERENCES `categorymaster` (`name`))
+2022/12/29 17:33:07 http: panic serving [::1]:57537: sql: expected 5 destination arguments in Scan, not 6
+goroutine 21 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc000235450})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc000266000}, 0xc000211d70?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc000236c00?, {0x1484820?, 0xc000266000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc000266000}, 0xc000236b00)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc000211bc0?}, {0x1484820, 0xc000266000}, 0xc000236b00)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002512c0, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:08 http: panic serving [::1]:57540: sql: expected 5 destination arguments in Scan, not 6
+goroutine 5 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc000016120})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc00028e000}, 0xc000282210?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc000286100?, {0x1484820?, 0xc00028e000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc00028e000}, 0xc000286000)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc000282090?}, {0x1484820, 0xc00028e000}, 0xc000286000)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000000a0, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:09 http: panic serving [::1]:57543: sql: expected 5 destination arguments in Scan, not 6
+goroutine 10 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc0000a2070})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc00028e0e0}, 0xc000282750?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc000286500?, {0x1484820?, 0xc00028e0e0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc00028e0e0}, 0xc000286400)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc0002825d0?}, {0x1484820, 0xc00028e0e0}, 0xc000286400)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000280, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:09 http: panic serving [::1]:57546: sql: expected 5 destination arguments in Scan, not 6
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc0000a2170})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc0000da000}, 0xc00009e3c0?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc0000a6200?, {0x1484820?, 0xc0000da000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc0000da000}, 0xc0000a6100)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc00009e240?}, {0x1484820, 0xc0000da000}, 0xc0000a6100)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000b20a0, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:10 http: panic serving [::1]:57549: sql: expected 5 destination arguments in Scan, not 6
+goroutine 39 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc000016230})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc0000da0e0}, 0xc00009e870?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc0000a6500?, {0x1484820?, 0xc0000da0e0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc0000da0e0}, 0xc0000a6400)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc00009e720?}, {0x1484820, 0xc0000da0e0}, 0xc0000a6400)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000b2280, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:10 http: panic serving [::1]:57552: sql: expected 5 destination arguments in Scan, not 6
+goroutine 15 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc000235500})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc00028e1c0}, 0xc000282c90?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc000286a00?, {0x1484820?, 0xc00028e1c0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc00028e1c0}, 0xc000286900)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc000282b10?}, {0x1484820, 0xc00028e1c0}, 0xc000286900)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000460, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:11 http: panic serving [::1]:57555: sql: expected 5 destination arguments in Scan, not 6
+goroutine 52 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc0000a2270})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc00028e2a0}, 0xc000283020?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc000286d00?, {0x1484820?, 0xc00028e2a0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc00028e2a0}, 0xc000286c00)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc000282ed0?}, {0x1484820, 0xc00028e2a0}, 0xc000286c00)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000500, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:28 http: panic serving [::1]:57565: sql: expected 5 destination arguments in Scan, not 6
+goroutine 21 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc000235450})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc000266000}, 0xc000211d70?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc000236c00?, {0x1484820?, 0xc000266000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc000266000}, 0xc000236b00)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc000211bc0?}, {0x1484820, 0xc000266000}, 0xc000236b00)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000251360, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:28 http: panic serving [::1]:57568: sql: expected 5 destination arguments in Scan, not 6
+goroutine 6 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc0002354d0})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc00028e000}, 0xc000282300?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc000284200?, {0x1484820?, 0xc00028e000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc00028e000}, 0xc000284100)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc000282180?}, {0x1484820, 0xc00028e000}, 0xc000284100)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000140, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:29 http: panic serving [::1]:57571: sql: expected 5 destination arguments in Scan, not 6
+goroutine 35 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc000235560})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc0000c2000}, 0xc00009e360?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc0000aa200?, {0x1484820?, 0xc0000c2000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc0000c2000}, 0xc0000aa100)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc00009e1e0?}, {0x1484820, 0xc0000c2000}, 0xc0000aa100)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000b20a0, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:30 http: panic serving [::1]:57574: sql: expected 5 destination arguments in Scan, not 6
+goroutine 26 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc000235600})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc00028e0e0}, 0xc000282600?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc000284400?, {0x1484820?, 0xc00028e0e0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc00028e0e0}, 0xc000237000)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc00027e3c0?}, {0x1484820, 0xc00028e0e0}, 0xc000237000)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000251720, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:30 http: panic serving [::1]:57577: sql: expected 5 destination arguments in Scan, not 6
+goroutine 28 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc0000a20f0})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc0002660e0}, 0xc00027e7b0?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc000237300?, {0x1484820?, 0xc0002660e0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc0002660e0}, 0xc000237200)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc00027e630?}, {0x1484820, 0xc0002660e0}, 0xc000237200)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000251900, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:31 http: panic serving [::1]:57580: sql: expected 5 destination arguments in Scan, not 6
+goroutine 13 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc000016220})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc00028e1c0}, 0xc000282990?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc000284700?, {0x1484820?, 0xc00028e1c0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc00028e1c0}, 0xc000284600)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc000282840?}, {0x1484820, 0xc00028e1c0}, 0xc000284600)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000001e0, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:32 http: panic serving [::1]:57583: sql: expected 5 destination arguments in Scan, not 6
+goroutine 51 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc000016310})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc00028e2a0}, 0xc000282e40?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc000284a00?, {0x1484820?, 0xc00028e2a0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc00028e2a0}, 0xc000284900)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc000282cf0?}, {0x1484820, 0xc00028e2a0}, 0xc000284900)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000003c0, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:32 http: panic serving [::1]:57586: sql: expected 5 destination arguments in Scan, not 6
+goroutine 55 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc0003940c0})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc000398000}, 0xc000386120?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc0003aa000?, {0x1484820?, 0xc000398000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc000398000}, 0xc000284d00)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc0002831a0?}, {0x1484820, 0xc000398000}, 0xc000284d00)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000005a0, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:33 http: panic serving [::1]:57589: sql: expected 5 destination arguments in Scan, not 6
+goroutine 33 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc000394150})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc0002661c0}, 0xc00027eba0?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc000237600?, {0x1484820?, 0xc0002661c0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc0002661c0}, 0xc000237500)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc00027ea50?}, {0x1484820, 0xc0002661c0}, 0xc000237500)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002519a0, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/29 17:33:33 http: panic serving [::1]:57592: sql: expected 5 destination arguments in Scan, not 6
+goroutine 57 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x1376f00, 0xc000016440})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers.GetProductByName({0x1484820, 0xc00028e380}, 0xc000283470?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products.go:67 +0x465
+net/http.HandlerFunc.ServeHTTP(0xc000284f00?, {0x1484820?, 0xc00028e380?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x1484820, 0xc00028e380}, 0xc000284e00)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc0002832f0?}, {0x1484820, 0xc00028e380}, 0xc000284e00)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000000640, {0x1484c80, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db

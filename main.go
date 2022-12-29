@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -25,5 +26,6 @@ func main() {
 	r := mux.NewRouter()
 	routes.RegisterShoppingCart(r)
 	http.Handle("/", r)
+	fmt.Println("Server started on PORT 8000")
 	log.Fatal(http.ListenAndServe(":8000", r))
 }
