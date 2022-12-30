@@ -1,13 +1,6 @@
 package models
 
-import (
-	"database/sql"
-
-	"github.com/jinzhu/gorm"
-	"github.com/sanjana-jadhav-searce/shopping-catlog/pkg/config"
-)
-
-var db *sql.DB
+// var db *sql.DB
 
 type Product struct {
 	ID            int64  `json:"id"`
@@ -54,16 +47,15 @@ type Total struct {
 	Price    int64  `json:"price"`
 }
 
-var db1 *gorm.DB
+// func init() {
+// 	config.Connect()
+// 	db = config.GetDB()
+// 	// db.AutoMigrate(&Product{})
+// }
 
-func init() {
-	config.Connect()
-	db = config.GetDB()
-	// db.AutoMigrate(&Product{})
-}
-func (b *Cart) CreateCart() *Cart {
+// func (b *Cart) CreateCart() *Cart {
 
-	db1.NewRecord(b)
-	db1.Create(&b)
-	return b
-}
+// 	db1.NewRecord(b)
+// 	db1.Create(&b)
+// 	return b
+// }
