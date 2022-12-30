@@ -1295,3 +1295,129 @@ net/http.(*conn).serve(0xc0000000a0, {0x14ccee0, 0xc000211a70})
 	/usr/local/go/src/net/http/server.go:1991 +0x607
 created by net/http.(*Server).Serve
 	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/30 09:39:27 sql: database is closed
+2022/12/30 09:39:27 http: panic serving 127.0.0.1:53161: runtime error: invalid memory address or nil pointer dereference
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x13c8f80, 0x16fe380})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2985 +0x27
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers/Products.CreateProduct({0x14cca90, 0xc000300000}, 0xc000076120?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products/createproduct.go:54 +0x41a
+net/http.HandlerFunc.ServeHTTP(0xc000078200?, {0x14cca90?, 0xc000300000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001923c0, {0x14cca90, 0xc000300000}, 0xc000078000)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x14cbb18?}, {0x14cca90, 0xc000300000}, 0xc000078000)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00025b220, {0x14ccee0, 0xc000219a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/30 09:46:24 Error 1136 (21S01): Column count doesn't match value count at row 1
+2022/12/30 09:46:24 http: panic serving 127.0.0.1:53190: runtime error: invalid memory address or nil pointer dereference
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x13c8f80, 0x16fe380})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2985 +0x27
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers/Products.CreateProduct({0x14cca90, 0xc000138000}, 0xc0001141e0?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products/createproduct.go:54 +0x41a
+net/http.HandlerFunc.ServeHTTP(0xc000120200?, {0x14cca90?, 0xc000138000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001dc3c0, {0x14cca90, 0xc000138000}, 0xc000120000)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x14cbb18?}, {0x14cca90, 0xc000138000}, 0xc000120000)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002a32c0, {0x14ccee0, 0xc000263a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/30 09:46:25 Error 1136 (21S01): Column count doesn't match value count at row 1
+2022/12/30 09:46:25 http: panic serving 127.0.0.1:53192: runtime error: invalid memory address or nil pointer dereference
+goroutine 34 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x13c8f80, 0x16fe380})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2985 +0x27
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers/Products.CreateProduct({0x14cca90, 0xc0000bc000}, 0xc00009c210?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products/createproduct.go:54 +0x41a
+net/http.HandlerFunc.ServeHTTP(0xc0000aa200?, {0x14cca90?, 0xc0000bc000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001dc3c0, {0x14cca90, 0xc0000bc000}, 0xc0000aa000)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x14cbb18?}, {0x14cca90, 0xc0000bc000}, 0xc0000aa000)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000a0000, {0x14ccee0, 0xc000263a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/30 09:46:26 Error 1136 (21S01): Column count doesn't match value count at row 1
+2022/12/30 09:46:26 http: panic serving 127.0.0.1:53193: runtime error: invalid memory address or nil pointer dereference
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x13c8f80, 0x16fe380})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2985 +0x27
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers/Products.CreateProduct({0x14cca90, 0xc0000bc0e0}, 0xc00009c480?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products/createproduct.go:54 +0x41a
+net/http.HandlerFunc.ServeHTTP(0xc0000aa600?, {0x14cca90?, 0xc0000bc0e0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001dc3c0, {0x14cca90, 0xc0000bc0e0}, 0xc0000aa400)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x14cbb18?}, {0x14cca90, 0xc0000bc0e0}, 0xc0000aa400)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000a00a0, {0x14ccee0, 0xc000263a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/30 09:47:43 Error 1136 (21S01): Column count doesn't match value count at row 1
+2022/12/30 09:47:43 http: panic serving 127.0.0.1:53204: runtime error: invalid memory address or nil pointer dereference
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x13c8fc0, 0x16fe380})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2985 +0x27
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers/Products.CreateProduct({0x14ccaf0, 0xc0000c0000}, 0xc00009c1e0?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products/createproduct.go:54 +0x41a
+net/http.HandlerFunc.ServeHTTP(0xc0000a8200?, {0x14ccaf0?, 0xc0000c0000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00015c3c0, {0x14ccaf0, 0xc0000c0000}, 0xc0000a8000)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x14cbb78?}, {0x14ccaf0, 0xc0000c0000}, 0xc0000a8000)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc00021f400, {0x14ccf40, 0xc0001e3a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/30 09:48:04 Error 1136 (21S01): Column count doesn't match value count at row 1
+2022/12/30 09:48:04 http: panic serving 127.0.0.1:53208: runtime error: invalid memory address or nil pointer dereference
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x13c9020, 0x16fe380})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2985 +0x27
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers/Products.CreateProduct({0x14ccb70, 0xc000296000}, 0xc0002801e0?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products/createproduct.go:54 +0x41a
+net/http.HandlerFunc.ServeHTTP(0xc000286200?, {0x14ccb70?, 0xc000296000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x14ccb70, 0xc000296000}, 0xc000286000)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x14cbbf8?}, {0x14ccb70, 0xc000296000}, 0xc000286000)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0002512c0, {0x14ccfc0, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db

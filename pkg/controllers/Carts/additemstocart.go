@@ -29,18 +29,11 @@ func AddItemsToCart(w http.ResponseWriter, r *http.Request) {
 
 		new_response_item["product"] = product
 		new_response_item["quantity"] = quantity
-		// new_response_item["response"] = "INSERTED SUCCESFULLY"
-
-		// new_response_item["message"] = queryhelpers.AddToCart(ref, fmt.Sprint(quantity), fmt.Sprint(product_id))["message"]
-
 		new_response_item["message"] = MultipleCart(fmt.Sprint(quantity), fmt.Sprint(product), w, r)["message"]
 		response = append(response, new_response_item)
 
 	}
 
-	//helpers.SendResponse(response, w)
-	//fmt.Println(response)
-	//fmt.Println("GOT INSERTED SUCCESFULLY")
 	fmt.Println("response", response)
 	json.NewEncoder(w).Encode(response)
 

@@ -1,7 +1,9 @@
 package controllers
 
 import (
+	// "database/sql"
 	"encoding/json"
+	"fmt"
 
 	"github.com/sanjana-jadhav-searce/shopping-catlog/pkg/config"
 
@@ -22,12 +24,11 @@ func GetProductByName(w http.ResponseWriter, r *http.Request) {
 	defer db.Close()
 	var product models.Product
 	params := mux.Vars(r)
-	result, err := db.Query("SELECT id, name, specification, SKU, category, price FROM products WHERE name=?", params["name"])
+	result, err := db.Query("SELECT id, name, specification, sku, category, price FROM products WHERE name=?", params["name"])
+	fmt.Println(result)
 	if err != nil {
 		panic(err.Error())
 	}
-	defer result.Close()
-
 	for result.Next() {
 		err := result.Scan(&product.ID, &product.Name, &product.Specification, &product.SKU, &product.Category, &product.Price)
 		if err != nil {

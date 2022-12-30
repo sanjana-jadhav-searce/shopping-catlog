@@ -8,7 +8,7 @@ import (
 	// "github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers"
 )
 
-func GetCart(t *testing.T) any {
+func GetCarts(t *testing.T) any {
 	response, err := http.Get(URL + "/getcart")
 	if err != nil {
 		t.Log(err)
@@ -26,7 +26,7 @@ func GetCart(t *testing.T) any {
 
 // var URL string = "http://127.0.0.1:8000"
 
-func TestGetCart(t *testing.T) {
+func TestGetCarts(t *testing.T) {
 	carts := GetCategory(t)
 
 	_, ok := carts.([]any)
