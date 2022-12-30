@@ -18,11 +18,8 @@ type Product struct {
 	Price         int64  `json:"price"`
 }
 type MinimumProduct struct {
-	ID   int64  `json:"id"`
-	Name string `json:"name"`
-	// Specification string `json:"specification"`
-	// SKU           string `json:"SKU"`
-	// Category      string `json:"category"`
+	ID       int64  `json:"id"`
+	Name     string `json:"name"`
 	Category string `json:"category"`
 	Price    int64  `json:"price"`
 }
