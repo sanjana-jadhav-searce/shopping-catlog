@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 
 	"github.com/sanjana-jadhav-searce/shopping-catlog/pkg/config"
+	"github.com/sanjana-jadhav-searce/shopping-catlog/pkg/models"
 
 	// "io/ioutil"
 	// "example.com/pkg/utils"
@@ -27,17 +28,30 @@ func CreateInventoryProduct(w http.ResponseWriter, r *http.Request) {
 
 	productname := r.FormValue("productname")
 	quantity := r.FormValue("quantity")
+	var product models.Inventory
 
-	_, err = db.Exec("INSERT INTO inventories(productname, quantity) VALUES(?, ?)", productname, quantity)
+	if product.Product == "" {
+		x := "Data Cannot be Created"
+		json.NewEncoder(w).Encode(map[string]string{"message": x})
 
-	if err != nil {
-		log.Print(err)
-		return
+	} else {
+		result, err := db.Query("INSERT INTO inventories(productname, quantity) VALUES(?, ?)", productname, quantity)
+
+		if err != nil {
+			log.Print(err)
+			return
+		}
+
+		if result.Next() {
+			err := result.Scan(&product.Product)
+			if err != nil {
+				panic(err.Error())
+			}
+		}
+
+		x := "Created data successfully into the Products Table"
+		json.NewEncoder(w).Encode(map[string]string{"message": x})
+
 	}
-	x := "Inserted product into inventories successfully!"
-	json.Marshal(x)
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	json.NewEncoder(w).Encode(x)
 
 }

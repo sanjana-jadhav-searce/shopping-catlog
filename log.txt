@@ -1421,3 +1421,93 @@ net/http.(*conn).serve(0xc0002512c0, {0x14ccfc0, 0xc000211a70})
 	/usr/local/go/src/net/http/server.go:1991 +0x607
 created by net/http.(*Server).Serve
 	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/30 11:16:25 sql: database is closed
+2022/12/30 11:16:25 http: panic serving 127.0.0.1:53877: runtime error: invalid memory address or nil pointer dereference
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x13c8f40, 0x16fe380})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2985 +0x27
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers/Products.CreateProduct({0x14cca70, 0xc000268000}, 0xc000211c20?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products/createproduct.go:54 +0x41a
+net/http.HandlerFunc.ServeHTTP(0xc000236b00?, {0x14cca70?, 0xc000268000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x14cca70, 0xc000268000}, 0xc000286300)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x14cbaf8?}, {0x14cca70, 0xc000268000}, 0xc000286300)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000259220, {0x14ccec0, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/30 11:16:26 sql: database is closed
+2022/12/30 11:16:26 http: panic serving 127.0.0.1:53879: runtime error: invalid memory address or nil pointer dereference
+goroutine 38 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x13c8f40, 0x16fe380})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2985 +0x27
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers/Products.CreateProduct({0x14cca70, 0xc0002680e0}, 0xc000211e30?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products/createproduct.go:54 +0x41a
+net/http.HandlerFunc.ServeHTTP(0xc000236e00?, {0x14cca70?, 0xc0002680e0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x14cca70, 0xc0002680e0}, 0xc000236d00)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x14cbaf8?}, {0x14cca70, 0xc0002680e0}, 0xc000236d00)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc000259360, {0x14ccec0, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/30 11:16:36 sql: database is closed
+2022/12/30 11:16:36 http: panic serving 127.0.0.1:53881: runtime error: invalid memory address or nil pointer dereference
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x13c8f40, 0x16fe380})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2985 +0x27
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers/Products.CreateProduct({0x14cca70, 0xc0000c0000}, 0xc00009e210?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products/createproduct.go:54 +0x41a
+net/http.HandlerFunc.ServeHTTP(0xc0000b2100?, {0x14cca70?, 0xc0000c0000?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x14cca70, 0xc0000c0000}, 0xc0000b2000)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x14cbaf8?}, {0x14cca70, 0xc0000c0000}, 0xc0000b2000)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000a2000, {0x14ccec0, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/30 11:16:37 sql: database is closed
+2022/12/30 11:16:37 http: panic serving 127.0.0.1:53882: runtime error: invalid memory address or nil pointer dereference
+goroutine 22 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/go/src/net/http/server.go:1850 +0xbf
+panic({0x13c8f40, 0x16fe380})
+	/usr/local/go/src/runtime/panic.go:890 +0x262
+database/sql.(*Rows).Next(0x0)
+	/usr/local/go/src/database/sql/sql.go:2985 +0x27
+github.com/sanjana-jadhav-searce/shopping-catlog/pkg/controllers/Products.CreateProduct({0x14cca70, 0xc0000c00e0}, 0xc00009e420?)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/pkg/controllers/Products/createproduct.go:54 +0x41a
+net/http.HandlerFunc.ServeHTTP(0xc0000b2400?, {0x14cca70?, 0xc0000c00e0?}, 0x800?)
+	/usr/local/go/src/net/http/server.go:2109 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00018a3c0, {0x14cca70, 0xc0000c00e0}, 0xc0000b2300)
+	/Users/sanjanajadhav/Desktop/Shopping/shopping-catlog/vendor/github.com/gorilla/mux/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0x14cbaf8?}, {0x14cca70, 0xc0000c00e0}, 0xc0000b2300)
+	/usr/local/go/src/net/http/server.go:2947 +0x30c
+net/http.(*conn).serve(0xc0000a20a0, {0x14ccec0, 0xc000211a70})
+	/usr/local/go/src/net/http/server.go:1991 +0x607
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3102 +0x4db
+2022/12/30 11:20:23 Error 1062 (23000): Duplicate entry '' for key 'products.PRIMARY'
+2022/12/30 11:24:38 Error 1062 (23000): Duplicate entry '' for key 'products.PRIMARY'
+2022/12/30 11:27:33 Error 1062 (23000): Duplicate entry '' for key 'products.PRIMARY'
+2022/12/30 11:27:34 Error 1062 (23000): Duplicate entry '' for key 'products.PRIMARY'
+2022/12/30 11:35:10 Error 1062 (23000): Duplicate entry 'Medical' for key 'categorymaster.PRIMARY'
+2022/12/30 11:35:12 Error 1062 (23000): Duplicate entry 'Medical' for key 'categorymaster.PRIMARY'

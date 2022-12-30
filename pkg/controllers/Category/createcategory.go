@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 
 	"github.com/sanjana-jadhav-searce/shopping-catlog/pkg/config"
+	"github.com/sanjana-jadhav-searce/shopping-catlog/pkg/models"
 
 	// "io/ioutil"
 	// "example.com/pkg/utils"
@@ -27,17 +28,29 @@ func CreateCategory(w http.ResponseWriter, r *http.Request) {
 	}
 
 	name := r.FormValue("name")
+	var product models.CategoryMaster
+	if product.Name == "" {
+		x := "Data Cannot be Created"
+		json.NewEncoder(w).Encode(map[string]string{"message": x})
 
-	_, err = db.Exec("INSERT INTO categorymaster(name) VALUES(?)", name)
+	} else {
+		result, err := db.Query("INSERT INTO categorymaster(name) VALUES(?)", name)
 
-	if err != nil {
-		log.Print(err)
-		return
+		if err != nil {
+			log.Print(err)
+			return
+		}
+
+		if result.Next() {
+			err := result.Scan(&product.Name)
+			if err != nil {
+				panic(err.Error())
+			}
+		}
+
+		x := "Created data successfully into the Products Table"
+		json.NewEncoder(w).Encode(map[string]string{"message": x})
+
 	}
-	x := "Inserted Category Data Successfully!"
-	json.Marshal(x)
-	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	json.NewEncoder(w).Encode(x)
 
 }
