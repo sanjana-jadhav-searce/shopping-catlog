@@ -16,7 +16,7 @@ func AddProductViaAPI(product typedefs.Product) string {
 
 	request_body := bytes.NewBuffer(json_product)
 
-	res, err := http.Post(URL+"/product/add", "application/json", request_body)
+	res, err := http.Post("http://localhost:8000"+"/product/add", "application/json", request_body)
 	helpers.HandleError("httpPostRequestError", err)
 
 	var json_response map[string]string
@@ -30,12 +30,12 @@ func checkAddProductResponse(t *testing.T, expected_response string, got_respons
 	if got_response != expected_response {
 		t.Errorf("Expected Response: %v, Got Response: %v", expected_response, got_response)
 	}
-	RestoreDBTestingState(t)
+
 }
 
 func TestAddProduct(t *testing.T) {
 	product := typedefs.Product{
-		Product_ID: 294,
+		Product_ID: 455,
 		Name:       "Shorts",
 		Specification: map[string]string{
 			"color": "Brown",
@@ -56,7 +56,7 @@ func TestAddProduct(t *testing.T) {
 	checkAddProductResponse(t, expected_response, got_response)
 
 	product.Product_ID = 400
-	product.CategoryID = 400
+	product.CategoryID = 543
 	got_response = AddProductViaAPI(product)
 	expected_response = "pq: insert or update on table \"product\" violates foreign key constraint \"product_category_id_fkey\""
 	checkAddProductResponse(t, expected_response, got_response)

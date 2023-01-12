@@ -9,8 +9,8 @@ import (
 )
 
 func TestCreateCart(t *testing.T) {
-	response, err := http.Post(URL+"/cart/create", "application/json", nil)
-	helpers.HandleTestError("httpPostError", err, t)
+	response, err := http.Post("http://localhost:8000"+"/cart/create", "application/json", nil)
+	helpers.HandleTestError(err, t)
 
 	json_response := map[string]string{}
 	json.NewDecoder(response.Body).Decode(&json_response)

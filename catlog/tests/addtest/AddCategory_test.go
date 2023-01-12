@@ -17,7 +17,7 @@ func AddCategoryViaAPI(category typedefs.Category, t *testing.T) map[string]stri
 
 	request_body := bytes.NewBuffer(json_product)
 
-	res, err := http.Post(URL+"/category/add", "application/json", request_body)
+	res, err := http.Post("http://localhost:8000"+"/category/add", "application/json", request_body)
 	helpers.HandleError("httpPostRequestError", err)
 
 	var json_response map[string]string

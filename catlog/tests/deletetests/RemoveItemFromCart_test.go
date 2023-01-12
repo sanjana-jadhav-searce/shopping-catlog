@@ -13,15 +13,14 @@ func RemoveItemFromCartViaAPI(ref string, product_id int, t *testing.T) map[stri
 	request_url := fmt.Sprintf("%v/removeitemfromcart?ref=%v&product_id=%v", URL, ref, product_id)
 
 	req, err := http.NewRequest("DELETE", request_url, nil)
-	helpers.HandleTestError("httpNewRequestError", err, t)
+	helpers.HandleTestError(err, t)
 
 	res, err := http.DefaultClient.Do(req)
-	helpers.HandleTestError("httpDefaultClientDoError", err, t)
+	helpers.HandleTestError(err, t)
 
 	var v map[string]string
 	json.NewDecoder(res.Body).Decode(&v)
 
-	RestoreDBTestingState(t)
 	return v
 }
 

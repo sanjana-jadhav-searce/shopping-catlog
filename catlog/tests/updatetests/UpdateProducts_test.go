@@ -43,14 +43,14 @@ func TestUpdateProducts(t *testing.T) {
 
 func CheckUpdateEndpoint(product_id int, update_json_req_body_map map[string]any, expected_response string, t *testing.T) {
 	json_product, err := json.Marshal(update_json_req_body_map)
-	helpers.HandleTestError("jsonMarshalError", err, t)
+	helpers.HandleTestError(err, t)
 
 	request_body := bytes.NewBuffer(json_product)
 	req, err := http.NewRequest("PUT", fmt.Sprintf("%v/product/update/%v", URL, product_id), request_body)
-	helpers.HandleTestError("httpNewRequestError", err, t)
+	helpers.HandleTestError(err, t)
 
 	res, err := http.DefaultClient.Do(req)
-	helpers.HandleTestError("httpDefaultClientDoError", err, t)
+	helpers.HandleTestError(err, t)
 
 	var v map[string]string
 	json.NewDecoder(res.Body).Decode(&v)
@@ -59,5 +59,4 @@ func CheckUpdateEndpoint(product_id int, update_json_req_body_map map[string]any
 		t.Errorf("Expected: %v, Got: %v", expected_response, v["message"])
 	}
 
-	RestoreDBTestingState(t)
 }

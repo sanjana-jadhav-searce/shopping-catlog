@@ -4,8 +4,8 @@ import (
 	"testing"
 )
 
-func HandleTestError(errorString string, err error, t *testing.T) {
+func HandleTestError(err error, t *testing.T) {
 	if err != nil {
-		t.Log(errorString+":", err)
+		t.Log(err)
 	}
 }

@@ -9,17 +9,18 @@ import (
 	"demo/helpers"
 )
 
+var URL = "http://localhost:8000"
+
 func DeleteCategoryViaAPI(category_id int, expected_response string, t *testing.T) map[string]string {
 	req, err := http.NewRequest("DELETE", fmt.Sprintf("%v/category/delete/%v", URL, category_id), nil)
-	helpers.HandleTestError("httpNewRequestError", err, t)
+	helpers.HandleTestError(err, t)
 
 	res, err := http.DefaultClient.Do(req)
-	helpers.HandleTestError("httpDefaultClientDoError", err, t)
+	helpers.HandleTestError(err, t)
 
 	var v map[string]string
 	json.NewDecoder(res.Body).Decode(&v)
 
-	RestoreDBTestingState(t)
 	return v
 }
 

@@ -9,12 +9,12 @@ import (
 )
 
 func GetCartViaAPI(ref string, t *testing.T) any {
-	response, err := http.Get(URL + "/cart?ref=" + ref)
-	helpers.HandleTestError("httpGetError", err, t)
+	response, err := http.Get("http://localhost:8000" + "/cart?ref=" + ref)
+	helpers.HandleTestError(err, t)
 
 	var response_json any
 	err = json.NewDecoder(response.Body).Decode(&response_json)
-	helpers.HandleTestError("jsonDecodingError", err, t)
+	helpers.HandleTestError(err, t)
 
 	return response_json
 }
@@ -32,7 +32,7 @@ func TestGetCart(t *testing.T) {
 		response := GetCartViaAPI(v["ref"].(string), t)
 
 		json_response, err := json.Marshal(response)
-		helpers.HandleTestError("jsonMarshalError", err, t)
+		helpers.HandleTestError(err, t)
 
 		if string(json_response) != v["expected_response"].(string) {
 			t.Errorf("Expected Response: %v, Got Response: %v", v["expected_response"].(string), string(json_response))

@@ -10,8 +10,8 @@ import (
 )
 
 func GetProductViaAPI(id int, t *testing.T) map[string]string {
-	response, err := http.Get(URL + "/product/" + fmt.Sprint(id))
-	helpers.HandleTestError("httpGetError", err, t)
+	response, err := http.Get("http://localhost:8000" + "/product/" + fmt.Sprint(id))
+	helpers.HandleTestError(err, t)
 
 	response_json := map[string]string{}
 	json.NewDecoder(response.Body).Decode(&response_json)

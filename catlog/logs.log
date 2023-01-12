@@ -1,2 +1,9 @@
 2022/12/30 14:03:05 runQueryError:Error 1146 (42S02): Table 'shoppingcart.category' doesn't exist
 2023/01/04 11:18:28 runQueryError:Error 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`shoppingcatlog`.`inventory`, CONSTRAINT `inventory_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`))
+2023/01/12 22:12:32 runQueryError:Error 1062 (23000): Duplicate entry '1' for key 'category.PRIMARY'
+2023/01/12 22:12:33 runQueryError:Error 1062 (23000): Duplicate entry '4' for key 'category.PRIMARY'
+2023/01/12 22:12:33 runQueryError:Error 1062 (23000): Duplicate entry '1' for key 'category.PRIMARY'
+2023/01/12 22:39:01 runQueryError:Error 1062 (23000): Duplicate entry '4' for key 'category.PRIMARY'
+2023/01/12 22:39:01 runQueryError:Error 1062 (23000): Duplicate entry '1' for key 'category.PRIMARY'
+2023/01/12 22:39:01 runQueryError:Error 1062 (23000): Duplicate entry '4' for key 'category.PRIMARY'
+2023/01/12 22:39:01 runQueryError:Error 1062 (23000): Duplicate entry '1' for key 'category.PRIMARY'

@@ -22,10 +22,10 @@ func TestDeleteProduct(t *testing.T) {
 
 func DeleteProductViaAPI(product_id int, expected_response string, t *testing.T) {
 	req, err := http.NewRequest("DELETE", fmt.Sprintf("%v/product/delete/%v", URL, product_id), nil)
-	helpers.HandleTestError("httpNewRequestError", err, t)
+	helpers.HandleTestError(err, t)
 
 	res, err := http.DefaultClient.Do(req)
-	helpers.HandleTestError("httpDefaultClientDoError", err, t)
+	helpers.HandleTestError(err, t)
 
 	var v map[string]string
 	json.NewDecoder(res.Body).Decode(&v)
@@ -34,5 +34,4 @@ func DeleteProductViaAPI(product_id int, expected_response string, t *testing.T)
 		t.Errorf("Expected: %v, Got: %v", expected_response, v["message"])
 	}
 
-	RestoreDBTestingState(t)
 }

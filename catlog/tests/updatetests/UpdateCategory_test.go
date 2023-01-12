@@ -11,24 +11,25 @@ import (
 	"demo/typedefs"
 )
 
+var URL = "http://localhost:8000"
+
 func UpdateCategoryViaAPI(category typedefs.Category, t *testing.T) map[string]string {
 	update_json_req_body_map := map[string]any{
 		"name": category.Name,
 	}
 	json_product, err := json.Marshal(update_json_req_body_map)
-	helpers.HandleTestError("jsonMarshalError", err, t)
+	helpers.HandleTestError(err, t)
 
 	request_body := bytes.NewBuffer(json_product)
 	req, err := http.NewRequest("PUT", fmt.Sprintf("%v/category/update/%v", URL, category.CategoryID), request_body)
-	helpers.HandleTestError("httpNewRequestError", err, t)
+	helpers.HandleTestError(err, t)
 
 	res, err := http.DefaultClient.Do(req)
-	helpers.HandleTestError("httpDefaultClientDoError", err, t)
+	helpers.HandleTestError(err, t)
 
 	var v map[string]string
 	json.NewDecoder(res.Body).Decode(&v)
 
-	RestoreDBTestingState(t)
 	return v
 }
 

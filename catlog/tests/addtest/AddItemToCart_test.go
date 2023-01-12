@@ -10,9 +10,9 @@ import (
 )
 
 func AddToCartViaAPI(ref string, product_id int, quantity int, t *testing.T) map[string]string {
-	request_url := fmt.Sprintf("%v/additemtocart?ref=%v&product_id=%v&quantity=%v", URL, ref, product_id, quantity)
+	request_url := fmt.Sprintf("http://localhost:8000"+"/additemtocart?ref=%v&product_id=%v&quantity=%v", ref, product_id, quantity)
 	response, err := http.Post(request_url, "application/json", nil)
-	helpers.HandleTestError("httpPostError", err, t)
+	helpers.HandleTestError(err, t)
 
 	json_response := map[string]string{}
 	json.NewDecoder(response.Body).Decode(&json_response)
@@ -46,5 +46,4 @@ func TestAddToCart(t *testing.T) {
 		}
 	}
 
-	RestoreDBTestingState(t)
 }
