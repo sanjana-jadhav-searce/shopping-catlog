@@ -1,0 +1,2 @@
+2023/01/12 22:03:11 httpPostRequestError:Post "http://localhost:8000/product/add": dial tcp [::1]:8000: connect: connection refused
+2023/01/12 22:03:12 httpPostRequestError:Post "http://localhost:8000/product/add": dial tcp [::1]:8000: connect: connection refused
