@@ -89,12 +89,12 @@ func AddProduct() {
 	}
 
 	fmt.Println("Do you want to continue? (y/n)")
-	var cont string
-	_, err = fmt.Scanln(&cont)
+	var opt string
+	_, err = fmt.Scanln(&opt)
 	if err != nil {
 		fmt.Println(err)
 	}
-	if cont == "y" {
+	if opt == "y" {
 		Console()
 	} else {
 		return
@@ -116,12 +116,12 @@ func GetProduct() {
 	}
 
 	fmt.Println("Do you want to continue? (y/n)")
-	var condition string
-	_, err = fmt.Scanln(&condition)
+	var opt string
+	_, err = fmt.Scanln(&opt)
 	if err != nil {
 		fmt.Println(err)
 	}
-	if condition == "y" {
+	if opt == "y" {
 		Console()
 	} else {
 		return
@@ -146,19 +146,14 @@ func GetProducts() {
 	if err != nil {
 		fmt.Println(err)
 	}
-	/*_, err = http.Get("http://localhost:8089/getproducts/" + page)
-	if err != nil {
-		fmt.Println(err)
-	}
-	*/
 
 	fmt.Println("Do you want to continue? (y/n)")
-	var condition string
-	_, err = fmt.Scanln(&condition)
+	var opt string
+	_, err = fmt.Scanln(&opt)
 	if err != nil {
 		fmt.Println(err)
 	}
-	if condition == "y" {
+	if opt == "y" {
 		Console()
 	} else {
 		return
@@ -207,12 +202,12 @@ func UpdateProduct() {
 	fmt.Println("Update done succesfully")
 
 	fmt.Println("Do you want to continue? (y/n)")
-	var condition string
-	_, err = fmt.Scanln(&condition)
+	var opt string
+	_, err = fmt.Scanln(&opt)
 	if err != nil {
 		fmt.Println(err)
 	}
-	if condition == "y" {
+	if opt == "y" {
 		Console()
 	} else {
 		return
@@ -239,12 +234,12 @@ func DeleteProduct() {
 	fmt.Println("Delete done succesfully")
 
 	fmt.Println("Do you want to continue? (y/n)")
-	var condition string
-	_, err = fmt.Scanln(&condition)
+	var opt string
+	_, err = fmt.Scanln(&opt)
 	if err != nil {
 		fmt.Println(err)
 	}
-	if condition == "y" {
+	if opt == "y" {
 		Console()
 	} else {
 		return

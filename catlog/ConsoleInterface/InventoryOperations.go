@@ -31,12 +31,12 @@ func GetInventory() {
 	}
 
 	fmt.Println("Do you want to continue? (y/n)")
-	var cont string
-	_, err = fmt.Scanln(&cont)
+	var opt string
+	_, err = fmt.Scanln(&opt)
 	if err != nil {
 		fmt.Println(err)
 	}
-	if cont == "y" {
+	if opt == "y" {
 		Console()
 	} else {
 		return
@@ -80,12 +80,12 @@ func UpdateInventory() {
 	fmt.Println("Update done succesfully")
 
 	fmt.Println("Do you want to continue? (y/n)")
-	var cont string
-	_, err = fmt.Scanln(&cont)
+	var opt string
+	_, err = fmt.Scanln(&opt)
 	if err != nil {
 		fmt.Println(err)
 	}
-	if cont == "y" {
+	if opt == "y" {
 		Console()
 	} else {
 		return
